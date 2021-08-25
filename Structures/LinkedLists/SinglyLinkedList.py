@@ -1,7 +1,7 @@
 from Structures.LinkedLists.Node import Node
 
 
-class LinkedList:
+class SinglyLinkedList:
     """Singly Linked List using Node Object for storage."""
     def __init__(self, head=None):
         """Initialises an empty Linked List."""
