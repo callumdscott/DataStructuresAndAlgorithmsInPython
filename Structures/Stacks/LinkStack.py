@@ -9,11 +9,11 @@ class LinkStack:
         self.head = None
         self.size = 0
 
-    def __len__(self):
+    def __len__(self) -> int:
         """Return the size of the stack."""
         return self.size
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """Returns True if list is empty."""
         return self.size == 0
 
@@ -23,13 +23,13 @@ class LinkStack:
         previous_head = self.head
         self.head = Node(e, previous_head)
 
-    def top(self):
+    def top(self) -> object:
         """Return the element at the top of the stack."""
         if self.is_empty():
             raise Empty("Stack is empty")
         return self.head.object_held
 
-    def pop(self):
+    def pop(self) -> object:
         """Return and remove the element at the top of the stack."""
         if self.is_empty():
             raise Empty("Stack is empty")

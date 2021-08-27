@@ -2,7 +2,7 @@ from Errors.Empty import Empty
 
 
 class ArrayQueue:
-    """FIFO queue implementation using a Python list as underlying storage."""
+    """FIFO queue implementation using  a Singly Linked List."""
     DEFAULT_SIZE = 10
 
     def __init__(self):
@@ -12,21 +12,21 @@ class ArrayQueue:
         self._front = 0
         pass
 
-    def __len__(self):
+    def __len__(self) -> int:
         """Return the number of elements in the queue."""
         return self.size
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """Return True if the queue is empty."""
         return  self.size == 0
 
-    def first(self):
+    def first(self) -> object:
         """Returns the element at the front of the queue."""
         if self.is_empty():
             raise Empty("Empty Queue")
         return self.data[self._front]
 
-    def dequeue(self):
+    def dequeue(self) -> object:
         """Returns and removes the element at the front of the queue."""
         if self.is_empty():
             raise Empty("Empty Queue")
