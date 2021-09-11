@@ -3,7 +3,6 @@ class Node:
 
     def __init__(self, data, parent=None, left=None, right=None):
         """Initialises a Node for Binary Search Tree."""
-        self.parent = parent
         self.data = data
         self.left = left
         self.right = right
@@ -15,12 +14,12 @@ class Node:
                 self.left.insert(data)
             else:
 
-                self.left = Node(data, parent=self)
+                self.left = Node(data)
         else:
             if self.right:
                 self.right.insert(data)
             else:
-                self.right = Node(data, parent=self)
+                self.right = Node(data)
 
     def min_value(self):
         """Prints the min value of the Binary Search Tree."""
@@ -35,11 +34,6 @@ class Node:
             return self.right.max_value()
         else:
             return self
-
-    # TODO: implement deletion
-    def remove(self, data):
-        """removes a node from the tree if its data is equivalent to the data argument passed to the function."""
-        pass
 
     def inorder(self):
         """Prints the contents of the Binary Search Tree in order, smallest to largest."""
