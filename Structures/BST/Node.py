@@ -61,6 +61,27 @@ class Node:
 
     def delete_node(self, data):
         """ deletes the node if the data is present within the tree structure."""
+        """
+        The previous method for deletion worked well on initial brief testing, but on further examination failed.
+        This was due to the difficulty maintaining a link from the parent to the newly found successor.
+        
+        To overcome this problem I found the following answer from stack overflow for deletion:
+                - https://stackoverflow.com/questions/33448561/delete-node-in-binary-search-tree-python
+                
+        The solution works by checking if the data is equal to our current node data, then we find the minimum node
+        and the parent of the minimum node.
+        
+        then we overwrite the parent of the minimum to remove from the tree and set the successor left and right to the 
+        current left and right nodes.
+        
+        this is for the case when both left and right nodes exist, otherwise we can just grab the left or the right,
+        else we continue to search and if we reach a leaf node we juts return our current node.
+        
+        as this works by traversing down through the tree recursively, we must return our node for each traversal, so
+        as to pass up the recursive stack.
+        
+        TODO: review deletion from BST until able to whiteboard a solution from scratch, given the structure.
+        """
         if self.data == data:
             if self.right and self.left:
                 [parent_successor, successor] = self.right.get_min(self)
