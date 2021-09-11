@@ -45,3 +45,8 @@ class BinarySearchTree:
         else:
             max_node = None
         print(max_node.data)
+
+    def remove(self, data):
+        """removes a node from the Binary Search Tree if it is equivalent to the data arg."""
+        if self.root:
+            self.root.remove()
