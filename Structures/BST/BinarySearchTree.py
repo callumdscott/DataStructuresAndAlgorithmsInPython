@@ -51,9 +51,8 @@ class BinarySearchTree:
         if self.root:
             _ = self._delete_node(self.root, data)
 
-    def _find_successor(self):
+    def _find_successor(self, current):
         """private method for finding smallest node."""
-        current = self.root
         while current.left:
             current = current.left
         return current
