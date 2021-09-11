@@ -36,7 +36,9 @@ class Node:
         else:
             return self
 
+    # TODO: implement deletion
     def remove(self, data):
+        """removes a node from the tree if its data is equivalent to the data argument passed to the function."""
         pass
 
     def inorder(self):
