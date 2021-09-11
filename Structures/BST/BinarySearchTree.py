@@ -48,33 +48,4 @@ class BinarySearchTree:
 
     def delete(self, data):
         """removes a node from the Binary Search Tree if it is equivalent to the data arg."""
-        if self.root:
-            _ = self._delete_node(self.root, data)
-
-    def _find_successor(self, current):
-        """private method for finding smallest node."""
-        while current.left:
-            current = current.left
-        return current
-
-    def _delete_node(self, current, data):
-        """private method for recursively finding the node to delete."""
-        if data == current.data:
-            if current.left is None:
-                current = current.right
-            elif current.right is None:
-                current = current.left
-            else:
-                current = self._find_successor(current)
-                current.right = self._delete_node(current.right, current.data)
-        elif data < current.data:
-            if current.left:
-                current.left = self._delete_node(current.left, data)
-            else:
-                pass
-        else:
-            if current.right:
-                current.right = self._delete_node(current.right, data)
-            else:
-                pass
-        return current
+        self.root.delete_node(data)

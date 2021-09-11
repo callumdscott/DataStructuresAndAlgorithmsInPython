@@ -58,3 +58,37 @@ class Node:
         if self.right:
             self.right.postorder()
         print(self.data)
+
+    def delete_node(self, data):
+        """ deletes the node if the data is present within the tree structure."""
+        if self.data == data:
+            if self.right and self.left:
+                [parent_successor, successor] = self.right.get_min(self)
+                if parent_successor.left == successor:
+                    parent_successor.left = successor.right
+                else:
+                    parent_successor.right = successor.right
+                successor.left = self.left
+                successor.right = self.right
+                return successor
+            else:
+                if self.left:
+                    return self.left
+                else:
+                    return self.right
+        else:
+            if self.data > data:
+                if self.left:
+                    self.left = self.left.delete_node(data)
+            else:
+                if self.right:
+                    self.right = self.right.delete_node(data)
+
+        return self
+
+    def get_min(self, parent):
+        """ return the minimum node in the current tree and its parent."""
+        if self.left:
+            return self.left.get_min(self)
+        else:
+            return [parent, self]
