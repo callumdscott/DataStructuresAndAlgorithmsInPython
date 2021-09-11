@@ -4,6 +4,7 @@ from Structures.HashMap.UnsortedTableMap import UnsortedTableMap
 
 class ChainHashMap(HashMap):
     """Concrete implementation of a HashMap using chaining for collisions."""
+    """"Code for HashMaps from Data Structures and Algorithms in Python, by Tamassia et. al, 2013"""
 
     def _bucket_getitem(self, index, key):
         """returns an Item from the bucket if the hashed index and key match."""

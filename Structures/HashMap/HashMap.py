@@ -7,6 +7,7 @@ from random import randrange
 
 class HashMap(Map):
     """Abstract HashMap implementation using MAD method for hashed compression."""
+    """"Code for HashMaps from Data Structures and Algorithms in Python, by Tamassia et. al, 2013"""
 
     def __init__(self, cap=11, prime=109345121):
         """Initialise an empty queue."""

@@ -3,7 +3,7 @@ from collections import MutableMapping
 
 class Map(MutableMapping):
     """creates the Abstract Class using non public _Item class"""
-
+    """"Code for HashMaps from Data Structures and Algorithms in Python, by Tamassia et. al, 2013"""
     class _Item:
         """Key-Value pair Item"""
         __slots__ = '_key', '_value'

@@ -3,7 +3,7 @@ from Structures.HashMap.Map import Map
 
 class UnsortedTableMap(Map):
     """ Map using unordered list."""
-
+    """"Code for HashMaps from Data Structures and Algorithms in Python, by Tamassia et. al, 2013"""
     def __init__(self):
         """Create an empty map."""
         self._table = []
