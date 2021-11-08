@@ -2,6 +2,8 @@ class Node:
     """Node for storing data of Binary Search Tree."""
     """Implemented naiively from scratch without reference material
         - INTIALLY TESTED: insert and remove"""
+    # TODO: DOCUMENT
+
     def __init__(self, data):
         self.data = data
         self.parent = None
