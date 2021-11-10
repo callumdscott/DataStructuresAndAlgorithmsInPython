@@ -33,17 +33,17 @@ class Sort:
 
     def merge_sort(self, in_place=False):
         if not in_place:
-            self.list_elements = self.mergesort(self.list_elements)
+            self.list_elements = self._mergesort(self.list_elements)
 
-    def mergesort(self, unordered_list):
+    def _mergesort(self, unordered_list):
         if len(unordered_list) == 2:
             if unordered_list[0] > unordered_list[1]:
                 unordered_list[0], unordered_list[1] = unordered_list[1], unordered_list[0]
             return unordered_list
         elif len(unordered_list) > 2:
             split_index = len(unordered_list) // 2
-            sorted_left = self.mergesort(unordered_list[:split_index])
-            sorted_right = self.mergesort(unordered_list[split_index:])
+            sorted_left = self._mergesort(unordered_list[:split_index])
+            sorted_right = self._mergesort(unordered_list[split_index:])
             return self.merge(sorted_left, sorted_right)
         else:
             return unordered_list
@@ -67,21 +67,33 @@ class Sort:
         return new_list
 
     def quick_sort(self):
-        # TODO: implement quicksort
-        pass
+        random.shuffle(self.list_elements)
+        self.list_elements = self._quicksort(self.list_elements)
+
+    def _quicksort(self, unordered_list):
+        if len(unordered_list) <= 1:
+            return unordered_list
+        pivot = unordered_list[0]
+        less, equal, greater = self.partition(unordered_list, pivot)
+        return self._quicksort(less) + equal + self._quicksort(greater)
+
+    @staticmethod
+    def partition(unordered_list, pivot):
+        less, equal, greater = [], [], []
+        for val in unordered_list:
+            if val < pivot:
+                less.append(val)
+            if val == pivot:
+                equal.append(val)
+            if val > pivot:
+                greater.append(val)
+        return less, equal, greater
 
 
 if __name__ == '__main__':
-    unsorted = [10, 3, 5, 1, 2, 7, 8, 6, 4, 9]
-    to_sort = unsorted
-    new_sort = Sort(to_sort)
-    # new_sort.selection_sort()
+    # unsorted = [10, 3, 5, 1, 2, 7, 8, 6, 4, 9]
+    # to_sort = unsorted
+    # new_sort = Sort(to_sort)
+    # new_sort.quick_sort()
     # print(new_sort.list_elements)
-    # new_sort.insertion_sort()
-    # print(new_sort.list_elements)
-    # new_sort.bubble_sort()
-    # print(new_sort.list_elements)
-    # new_sort.merge_sort()
-    # print(new_sort.list_elements)
-    new_sort.quick_sort()
-    print(new_sort.list_elements)
+    pass
