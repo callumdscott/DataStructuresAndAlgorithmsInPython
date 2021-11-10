@@ -1,6 +1,7 @@
 class MaxHeap:
     """MaxHeap for storing a max heap as a list."""
     """Implemented naiively from scratch without reference material."""
+    # TODO: TEST
 
     def __init__(self, initial_list=None):
         """Initialises an empty MaxHeap, unless an initial list is present to build from."""
