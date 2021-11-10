@@ -3,7 +3,7 @@ import random
 
 
 class Sort:
-
+    # TODO: MUST COMMENT CODE!!!
     def __init__(self, unsorted_list):
         self.list_elements = unsorted_list
 
