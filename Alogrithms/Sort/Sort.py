@@ -91,7 +91,7 @@ class Sort:
 
     @staticmethod
     def partition(unordered_list, pivot):
-        """Partitions an unordered lits into 3 lists of elements less, more and equal to the pivot."""
+        """Partitions an unordered list into 3 lists of elements less, more and equal to the pivot."""
         less, equal, greater = [], [], []
         for val in unordered_list:
             if val < pivot:
